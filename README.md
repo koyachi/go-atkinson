@@ -2,6 +2,8 @@
 
 Atkinson Dithering with Go.
 
+![lena.result.jpg](https://raw.githubusercontent.com/koyachi/go-atkinson/master/example/lena.result.jpg)
+
 
 ## Example
 
