@@ -34,7 +34,7 @@ func decodeImage(filePath string) (img image.Image, err error) {
 	return
 }
 
-func Run(path string) (result image.Image, err error) {
+func Dither(path string) (result image.Image, err error) {
 	img, err := decodeImage(path)
 	if err != nil {
 		return nil, err

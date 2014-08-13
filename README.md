@@ -22,7 +22,7 @@ import (
 func main() {
 	fmt.Printf("processing...\n")
 	imagePath := "./lena.jpg"
-	img, err := atkinson.Run(imagePath)
+	img, err := atkinson.Dither(imagePath)
 	if err != nil {
 		log.Fatal(err)
 	}
