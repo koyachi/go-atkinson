@@ -3,6 +3,7 @@ package main
 import (
 	"../"
 	"fmt"
+	"github.com/koyachi/go-lena"
 	"image/jpeg"
 	"log"
 	"os"
@@ -11,9 +12,19 @@ import (
 
 func main() {
 	fmt.Printf("processing...\n")
-	imagePath := "./lena.jpg"
-	//imagePath := "./Portal_Companion_Cube.jpg"
-	img, err := atkinson.DitherFile(imagePath)
+	/*
+		imagePath := "./lena.jpg"
+		//imagePath := "./Portal_Companion_Cube.jpg"
+		img, err := atkinson.DitherFile(imagePath)
+		if err != nil {
+			log.Fatal(err)
+		}
+	*/
+	img, err := lena.Image()
+	if err != nil {
+		log.Fatal(err)
+	}
+	img, err = atkinson.Dither(img)
 	if err != nil {
 		log.Fatal(err)
 	}
