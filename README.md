@@ -12,6 +12,7 @@ package main
 
 import (
 	"github.com/koyachi/go-atkinson"
+	"github.com/koyachi/go-lena"
 	"fmt"
 	"image/jpeg"
 	"log"
@@ -21,8 +22,11 @@ import (
 
 func main() {
 	fmt.Printf("processing...\n")
-	imagePath := "./lena.jpg"
-	img, err := atkinson.DitherFile(imagePath)
+	img, err := lena.Image()
+	if err != nil {
+		log.Fatal(err)
+	}
+	img, err = atkinson.Dither(img)
 	if err != nil {
 		log.Fatal(err)
 	}
