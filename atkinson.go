@@ -34,12 +34,16 @@ func decodeImage(filePath string) (img image.Image, err error) {
 	return
 }
 
-func Dither(path string) (result image.Image, err error) {
+func DitherFile(path string) (result image.Image, err error) {
 	img, err := decodeImage(path)
 	if err != nil {
 		return nil, err
 	}
 
+	return Dither(img)
+}
+
+func Dither(img image.Image) (result image.Image, err error) {
 	bounds := img.Bounds()
 	dstImg := image.NewGray(bounds)
 	draw.Draw(dstImg, bounds, img, image.ZP, draw.Src)

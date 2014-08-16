@@ -13,7 +13,7 @@ func main() {
 	fmt.Printf("processing...\n")
 	imagePath := "./lena.jpg"
 	//imagePath := "./Portal_Companion_Cube.jpg"
-	img, err := atkinson.Dither(imagePath)
+	img, err := atkinson.DitherFile(imagePath)
 	if err != nil {
 		log.Fatal(err)
 	}
